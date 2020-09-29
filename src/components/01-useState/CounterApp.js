@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import './counter.css';
 
 export const CounterApp = () => {
-  const [counter, setcounter] = useState({
+  const [state, setState] = useState({
     counter1: 10,
     counter2: 20,
+    counter3: 30,
+    counter4: 40,
   });
-  const { counter1, counter2 } = counter;
-  console.log(counter);
+  const { counter1, counter2 } = state;
+  //console.log(counter);
 
   return (
     <>
@@ -19,9 +21,9 @@ export const CounterApp = () => {
         onClick={() => {
           //setcounter(counter + 1);
 
-          setcounter({
+          setState({
+            ...state,
             counter1: counter1 + 1,
-            counter2,
           });
         }}
       >
